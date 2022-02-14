@@ -27,8 +27,9 @@ stages:
     steps:
     - task: AzureCLI@2
       inputs:
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
         azureSubscription: 'SC4TF'
-        scriptType: bash
+        scriptType: batch
         scriptLocation: inlineScript
         inlineScript: |
           az --version
