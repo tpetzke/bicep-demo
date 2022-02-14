@@ -30,5 +30,4 @@ stages:
         scriptType: $(scriptType)
         scriptLocation: inlineScript
         inlineScript: |
-          az --version
           az deployment sub create --location $(location) --template-file main.bicep
