@@ -33,11 +33,10 @@ stages:
         scriptType: $(scriptType)
         scriptLocation: inlineScript
         inlineScript: |
-          echo 'Hello'
-          echo 'Name $(stgAccountRgName)'
-          az deployment sub create 
-          --location $(location)  
-          --template-file main.bicep 
-          --parameters stgAccountRgName=$(stgAccountRgName) 
-          --parameters stgAccountName=$(stgAccountName) 
+          echo 'Setting up storage acoount $(stgAccountName) in RG $(stgAccountRgName) with container $(stgAccountContainerName)'
+          az deployment sub create \
+          --location $(location) \ 
+          --template-file main.bicep \ 
+          --parameters stgAccountRgName=$(stgAccountRgName) \ 
+          --parameters stgAccountName=$(stgAccountName) \
           --parameters stgAccountContainerName=$(stgAccountContainerName) 
