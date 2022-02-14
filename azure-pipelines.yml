@@ -12,7 +12,9 @@ variables:
 
   resourceGroupName: 'tfstate4243'
   location: 'westeurope'
-  templateFile: './main.bicep'
+  templateFile: './main.bicep'        # The entry point
+  scriptType: 'batch'                 # use batch for Windows and 'bash' for Linux build agents
+
 pool:
   name: 'Default'
 
@@ -29,9 +31,8 @@ stages:
       inputs:
         workingDirectory: '$(System.DefaultWorkingDirectory)'
         azureSubscription: 'SC4TF'
-        scriptType: batch
+        scriptType: $(scriptType)
         scriptLocation: inlineScript
         inlineScript: |
           az --version
-          az group create --name $(resourceGroupName) --location $(location)
-          az deployment group create --resource-group $(resourceGroupName) --template-file main.bicep
+          az deployment sub create --location $(location) --template-file main.bicep
