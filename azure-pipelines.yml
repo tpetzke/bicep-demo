@@ -36,6 +36,6 @@ stages:
           az deployment sub create 
           --location $(location)  
           --template-file main.bicep
-          --parameters "stgAccountRgName=$(stgAccountRgGroup)"
+          --parameters "stgAccountRgName=$(stgAccountRgName)"
           --parameters "stgAccountName=$(stgAccountName)"
           --parameters "stgAccountContainerName=$(stgAccountContainerName)"
