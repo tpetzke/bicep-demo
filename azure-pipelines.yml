@@ -10,8 +10,8 @@ variables:
 
   location: 'westeurope'
   scriptType: 'batch'                 # use 'batch' for Windows and 'bash' for Linux build agents
-  stgAccountRgGroup: 'tfstate46'
-  stgAccountName: 'sastate4646'
+  stgAccountRgName: 'tfstate47'
+  stgAccountName: 'sastate4747'
   stgAccountContainerName: 'sastate47'
 
 pool:
