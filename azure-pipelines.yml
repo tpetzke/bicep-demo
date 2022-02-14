@@ -33,6 +33,8 @@ stages:
         scriptType: $(scriptType)
         scriptLocation: inlineScript
         inlineScript: |
+          echo 'Hello'
+          echo 'Name $(stgAccountRgName)'
           az deployment sub create 
           --location $(location)  
           --template-file main.bicep 
