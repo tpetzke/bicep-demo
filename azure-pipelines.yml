@@ -10,6 +10,9 @@ variables:
 
   location: 'westeurope'
   scriptType: 'batch'                 # use 'batch' for Windows and 'bash' for Linux build agents
+  stgAccountRgGroup: 'tfstate46'
+  stgAccountName: 'sastate4646'
+  stgAccountContainerName: 'sastate47'
 
 pool:
   name: 'Default'
@@ -30,4 +33,9 @@ stages:
         scriptType: $(scriptType)
         scriptLocation: inlineScript
         inlineScript: |
-          az deployment sub create --location $(location) --template-file main.bicep
+          az deployment sub create 
+          --location $(location)  
+          --template-file main.bicep
+          --parameters "stgAccountRgName=$(stgAccountRgGroup)"
+          --parameters "stgAccountName=$(stgAccountName)"
+          --parameters "stgAccountContainerName=$(stgAccountContainerName)"
