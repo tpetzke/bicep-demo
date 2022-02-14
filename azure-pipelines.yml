@@ -1,7 +1,5 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Pipeline
+# Use to setup a resource group and a storage account to hold the terrafrom state
 
 trigger:
 - master
@@ -10,10 +8,8 @@ name: Deploy Bicep files
 
 variables:
 
-  resourceGroupName: 'tfstate4243'
   location: 'westeurope'
-  templateFile: './main.bicep'        # The entry point
-  scriptType: 'batch'                 # use batch for Windows and 'bash' for Linux build agents
+  scriptType: 'batch'                 # use 'batch' for Windows and 'bash' for Linux build agents
 
 pool:
   name: 'Default'
