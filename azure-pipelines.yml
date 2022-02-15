@@ -11,9 +11,9 @@ name: Deploy Bicep files
 variables:
 
   location: 'westeurope'
-  stgAccountRgName: 'tfstate47'
-  stgAccountName: 'sastate474747'
-  stgAccountContainerName: 'sastate47'
+  stgAccountRgName: 'rg-tfstate'
+  stgAccountName: 'stgacctfstate4243'
+  stgAccountContainerName: 'stgacc-tfstate-demo'
 
 pool:
   name: 'Default'
